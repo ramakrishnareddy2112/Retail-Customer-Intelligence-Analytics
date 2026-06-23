@@ -1,0 +1,76 @@
+{
+  "source": "data/processed/customer_sales.parquet",
+  "identified_completed_sales_rows": 779425,
+  "snapshot_date": "2011-12-10",
+  "customers": 5878,
+  "first_purchase": "2009-12-01",
+  "last_purchase": "2011-12-09",
+  "total_monetary_value_gbp": 17374804.27,
+  "average_recency_days": 201.87,
+  "average_frequency_orders": 6.29,
+  "average_customer_value_gbp": 2955.9,
+  "segment_totals": {
+    "Champions": 1290,
+    "Loyal Customers": 656,
+    "Potential Loyalists": 580,
+    "New Customers": 235,
+    "Cannot Lose Them": 223,
+    "At Risk": 846,
+    "Hibernating": 1282,
+    "Need Attention": 766
+  },
+  "segment_rules": {
+    "Champions": "R >= 4, F >= 4, M >= 4, and at least 2 completed orders.",
+    "Loyal Customers": "R >= 3, F >= 4, M >= 3, and at least 2 completed orders.",
+    "Potential Loyalists": "R >= 4, F between 2 and 3, M >= 2, and at least 2 completed orders.",
+    "New Customers": "R >= 4 and exactly 1 completed order.",
+    "Cannot Lose Them": "R <= 2, F >= 4, M >= 4, and at least 2 completed orders.",
+    "At Risk": "R <= 2 and either F >= 3 or M >= 3.",
+    "Hibernating": "R <= 2, F <= 2, and M <= 2.",
+    "Need Attention": "All remaining customers after the ordered rules above."
+  },
+  "cohort_retention": {
+    "acquisition_months": 25,
+    "first_acquisition_month": "2009-12",
+    "latest_purchase_month": "2011-12",
+    "max_cohort_month_index": 24,
+    "partial_month": "2011-12",
+    "partial_month_note": "December 2011 contains purchases only through 2011-12-09; any retention cell whose purchase month is 2011-12 is partial."
+  },
+  "quality_gates": {
+    "customer_count": {
+      "actual": 5878,
+      "expected": 5878,
+      "passed": true
+    },
+    "duplicate_customer_ids": {
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "missing_rfm_values": {
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "segment_counts_reconcile": {
+      "segment_total": 5878,
+      "customer_total": 5878,
+      "missing_segments": 0,
+      "passed": true
+    },
+    "monetary_value_reconciliation": {
+      "actual_gbp": 17374804.27,
+      "expected_gbp": 17374804.27,
+      "difference_gbp": -0.002,
+      "passed": true
+    },
+    "cohort_retention_bounds": {
+      "invalid_cells": 0,
+      "minimum_pct": 2.63,
+      "maximum_pct": 100.0,
+      "passed": true
+    },
+    "all_passed": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "input_rows": 1067371,
+  "exact_duplicates_removed": 34335,
+  "unique_rows": 1033036,
+  "partitions": {
+    "completed_sales": 1007913,
+    "returns_or_cancellations": 22497,
+    "excluded_non_sales": 2626,
+    "customer_sales": 779425,
+    "anonymous_sales": 228488
+  },
+  "reconciliation": {
+    "partition_total": 1033036,
+    "matches_unique_rows": true
+  },
+  "completed_sales_value_gbp": 20476260.45,
+  "returns_value_gbp": -1462050.61,
+  "missing_customer_id_rows": 235151,
+  "missing_description_rows": 4275,
+  "outlier_thresholds": {
+    "quantity_upper": 28.5,
+    "unit_price_upper": 8.45,
+    "line_revenue_upper": 38.05500000000001
+  },
+  "outlier_flag_counts": {
+    "quantity": 53061,
+    "unit_price": 78999,
+    "line_revenue": 84954
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "row_counts": {
+    "total": 1067371,
+    "exact_duplicates_within_sheet": 12133,
+    "exact_duplicates_across_workbook": 34335,
+    "completed_sales": 1041670,
+    "returns_or_cancellations": 22951,
+    "anonymous_rows": 243007,
+    "non_positive_price_rows": 6207,
+    "non_positive_quantity_rows": 22950,
+    "unparseable_date_rows": 0
+  },
+  "coverage": {
+    "minimum_invoice_date": "2009-12-01T07:45:00",
+    "maximum_invoice_date": "2011-12-09T12:50:00",
+    "source_sheets": [
+      "Year 2009-2010",
+      "Year 2010-2011"
+    ],
+    "countries": 43,
+    "products": 5304,
+    "customers": 5942,
+    "invoices": 53628
+  },
+  "missing_values": {
+    "description": {
+      "count": 4382,
+      "percent": 0.4105
+    },
+    "customer_id": {
+      "count": 243007,
+      "percent": 22.7669
+    }
+  },
+  "raw_value_totals_gbp": {
+    "all_signed_lines": 19287250.57,
+    "completed_sales": 20972594.57,
+    "returns_or_cancellations": -1526667.86
+  },
+  "validation": {
+    "status": "passed",
+    "failures": []
+  }
+}

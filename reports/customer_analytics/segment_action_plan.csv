@@ -1,0 +1,9 @@
+segment,priority,rule,recommended_action
+Champions,Protect,"R >= 4, F >= 4, M >= 4, and at least 2 completed orders.","Protect with early access, premium service, and referral invitations."
+Loyal Customers,Grow,"R >= 3, F >= 4, M >= 3, and at least 2 completed orders.","Use loyalty rewards, replenishment reminders, and cross-sell offers."
+Potential Loyalists,Nurture,"R >= 4, F between 2 and 3, M >= 2, and at least 2 completed orders.",Nurture with second-next-purchase offers and category recommendations.
+New Customers,Onboard,R >= 4 and exactly 1 completed order.,"Send onboarding, product education, and a timely second-order incentive."
+Cannot Lose Them,Recover,"R <= 2, F >= 4, M >= 4, and at least 2 completed orders.",Prioritise personal reactivation and service recovery before discounting.
+At Risk,Win back,R <= 2 and either F >= 3 or M >= 3.,Trigger win-back journeys based on past categories and purchase timing.
+Hibernating,Test,"R <= 2, F <= 2, and M <= 2.",Use low-cost reactivation tests and suppress if engagement stays absent.
+Need Attention,Monitor,All remaining customers after the ordered rules above.,Monitor behaviour and use light-touch merchandising or survey prompts.

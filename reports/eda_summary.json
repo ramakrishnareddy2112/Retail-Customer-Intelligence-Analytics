@@ -1,0 +1,22 @@
+{
+  "completed_sales_rows": 1007913,
+  "completed_sales_value_gbp": 20476260.45,
+  "orders": 40077,
+  "units_sold": 11205148,
+  "average_order_value_gbp": 510.92,
+  "median_order_value_gbp": 302.22,
+  "identified_customers": 5878,
+  "repeat_customers": 4255,
+  "repeat_customer_rate_pct": 72.39,
+  "identified_revenue_gbp": 17374804.27,
+  "anonymous_revenue_gbp": 3101456.18,
+  "anonymous_revenue_share_pct": 15.15,
+  "signed_returns_value_gbp": -1462050.61,
+  "absolute_return_value_to_sales_pct": 7.14,
+  "line_revenue_outlier_rows": 84954,
+  "line_revenue_outlier_share_pct": 8.43,
+  "flagged_revenue_gbp": 10658168.6,
+  "flagged_revenue_share_pct": 52.05,
+  "top_customer_decile_revenue_share_pct": 63.93,
+  "partial_period_note": "December 2011 contains data only through 9 December and must not be compared as a complete month."
+}

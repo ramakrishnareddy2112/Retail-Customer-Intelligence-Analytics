@@ -1,0 +1,137 @@
+{
+  "database": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\data\\processed\\retail_analytics.sqlite",
+  "queries": {
+    "foreign_key_resolution": {
+      "rows": 5,
+      "columns": [
+        "check_name",
+        "failure_count"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\foreign_key_resolution.csv"
+    },
+    "partition_reconciliation": {
+      "rows": 1,
+      "columns": [
+        "completed_sales",
+        "returns_or_cancellations",
+        "excluded_non_sales",
+        "reconciled_unique_rows"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\partition_reconciliation.csv"
+    },
+    "sales_value_reconciliation": {
+      "rows": 1,
+      "columns": [
+        "completed_sales_value_gbp",
+        "completed_orders",
+        "identified_customers",
+        "anonymous_sales_lines"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\sales_value_reconciliation.csv"
+    },
+    "returns_value_reconciliation": {
+      "rows": 1,
+      "columns": [
+        "signed_returns_value_gbp",
+        "return_or_cancellation_invoices"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\returns_value_reconciliation.csv"
+    },
+    "executive_kpis": {
+      "rows": 1,
+      "columns": [
+        "revenue_gbp",
+        "orders",
+        "identified_customers",
+        "average_order_value_gbp",
+        "revenue_per_identified_customer_gbp"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\executive_kpis.csv"
+    },
+    "monthly_revenue_growth": {
+      "rows": 25,
+      "columns": [
+        "year_month",
+        "revenue_gbp",
+        "orders",
+        "month_over_month_growth_pct"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\monthly_revenue_growth.csv"
+    },
+    "country_performance": {
+      "rows": 43,
+      "columns": [
+        "country_name",
+        "revenue_gbp",
+        "orders",
+        "identified_customers",
+        "average_order_value_gbp"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\country_performance.csv"
+    },
+    "top_products": {
+      "rows": 20,
+      "columns": [
+        "stock_code",
+        "product_description",
+        "units_sold",
+        "revenue_gbp",
+        "order_count"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\top_products.csv"
+    },
+    "top_customers": {
+      "rows": 20,
+      "columns": [
+        "customer_id",
+        "primary_country",
+        "orders",
+        "customer_revenue_gbp",
+        "average_order_value_gbp",
+        "first_purchase",
+        "last_purchase"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\top_customers.csv"
+    },
+    "repeat_customer_rate": {
+      "rows": 1,
+      "columns": [
+        "identified_customers",
+        "repeat_customers",
+        "repeat_customer_rate_pct"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\repeat_customer_rate.csv"
+    },
+    "product_returns": {
+      "rows": 20,
+      "columns": [
+        "stock_code",
+        "product_description",
+        "return_invoices",
+        "returned_units",
+        "absolute_return_value_gbp"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\product_returns.csv"
+    },
+    "customer_revenue_deciles": {
+      "rows": 10,
+      "columns": [
+        "value_decile",
+        "customers",
+        "revenue_gbp",
+        "revenue_share_pct"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\customer_revenue_deciles.csv"
+    },
+    "outlier_profile": {
+      "rows": 1,
+      "columns": [
+        "quantity_outlier_lines",
+        "price_outlier_lines",
+        "revenue_outlier_lines",
+        "flagged_revenue_gbp"
+      ],
+      "output": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\reports\\sql_results\\outlier_profile.csv"
+    }
+  }
+}

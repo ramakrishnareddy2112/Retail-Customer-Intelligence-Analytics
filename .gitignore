@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest-cache/
+.pytest-tmp/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Raw and generated data
+data/raw/*
+data/interim/*
+data/processed/*
+!data/README.md
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+data/raw/*.xls
+data/raw/*.xlsx
+*.parquet
+*.db
+*.sqlite
+*.sqlite3
+
+# Power BI and generated report scratch space
+dashboard/*.pbix
+reports/generated/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/settings.json
