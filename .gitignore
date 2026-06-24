@@ -4,6 +4,7 @@ __pycache__/
 .pytest_cache/
 .pytest-cache/
 .pytest-tmp/
+.agents/
 .venv/
 venv/
 

@@ -2,12 +2,13 @@
 
 An end-to-end retail analytics project that turns Online Retail II transactions into
 validated sales metrics, a SQLite star schema, SQL business outputs, EDA charts,
-RFM customer segments, cohort retention matrices, and action-ready customer reports.
+RFM customer segments, cohort retention matrices, non-parametric hypothesis tests,
+and stable evidence-selected customer clusters.
 
 ## Project Status
 
-The first reproducible analytics release is complete and ready for an initial Git
-commit.
+The reproducible analytics project is published on GitHub and continues to evolve
+through validated analytical phases.
 
 | Area | Status |
 |---|---|
@@ -17,7 +18,9 @@ commit.
 | SQL analysis exports | Complete: 13 CSV outputs |
 | Exploratory data analysis | Complete: 14 PNG charts and 2 Plotly HTML charts |
 | RFM customer segmentation and cohort retention | Complete |
-| Automated tests | Passing: 11 tests |
+| Statistical analysis with Holm-adjusted hypothesis tests | Complete |
+| K-Means customer clustering with multi-seed stability evaluation | Complete |
+| Automated tests | Passing: 20 tests |
 
 December 2011 is a partial month. The source data ends on 2011-12-09, so December
 2011 is labelled as partial and should not be compared with complete months as a
@@ -62,6 +65,26 @@ RFM segmentation uses identified completed sales only. The snapshot date is
 Segment definitions and recommended actions are exported to
 `reports/customer_analytics/segment_action_plan.csv`.
 
+## K-Means Customer Clustering
+
+K=2 remains the mathematical metric-optimal benchmark with the lowest composite
+rank sum (6). K=4 is the documented operational solution because it has the
+second-best rank sum (9), acceptable separation (silhouette 0.366 and
+Davies-Bouldin 0.929), very high five-seed stability (mean ARI 0.997), a 20.48%
+minimum cluster share, no tiny clusters, diminishing inertia gains after K=4, and
+more useful targeting resolution than a binary split.
+
+The exported model uses K=4, `random_state=42`, and `n_init=20`. Labels describe
+original-unit median recency, frequency, and monetary profiles; they do not imply
+causal or predictive performance.
+
+| ID | Business label | Customers | Customer share | Revenue share | Median R / F / M | Recommended action |
+|---:|---|---:|---:|---:|---|---|
+| 1 | High-Value Champions | 1,204 | 20.48% | 74.00% | 17 days / 13 orders / GBP 4,965.48 | Protect current value with recognition and relevant loyalty offers. |
+| 2 | Recent Growth Customers | 1,261 | 21.45% | 6.15% | 25 days / 3 orders / GBP 729.25 | Nurture the next purchase with timely cross-sell and replenishment prompts. |
+| 3 | Lapsed Established Customers | 1,455 | 24.75% | 16.29% | 186 days / 4 orders / GBP 1,447.74 | Prioritise profile-based reactivation using known categories. |
+| 4 | Dormant Low-Value Customers | 1,958 | 33.31% | 3.56% | 404.5 days / 1 order / GBP 272.04 | Use low-cost re-engagement tests and suppress outreach if inactivity persists. |
+
 ## Dataset Attribution
 
 This project uses **Online Retail II** from the UCI Machine Learning Repository.
@@ -94,6 +117,8 @@ python scripts/build_sql_database.py
 python scripts/run_sql_analysis.py
 python scripts/run_eda.py
 python scripts/run_customer_analytics.py
+python scripts/run_statistical_analysis.py
+python scripts/run_clustering.py
 ```
 
 Run tests:
@@ -105,7 +130,7 @@ Run tests:
 Expected result for the current repository state:
 
 ```text
-11 passed
+20 passed
 ```
 
 ## Key Outputs
@@ -120,6 +145,11 @@ Expected result for the current repository state:
 - Customer analytics reports: `reports/customer_analytics/*.csv`
 - Customer analytics summary: `reports/customer_analytics_summary.json`
 - Customer analytics charts: `images/customer_analytics/`
+- Statistical reports and summary: `reports/statistics/`
+- Statistical charts: `images/statistics/`
+- Customer cluster table: `data/processed/customer_clusters.parquet` and `.csv`
+- Clustering evaluation, profiles, and summary: `reports/clustering/`
+- Clustering charts: `images/clustering/`
 
 Large raw, interim, and processed data files are intentionally excluded from Git.
 

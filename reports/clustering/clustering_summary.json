@@ -1,0 +1,215 @@
+{
+  "source": "data/processed/customer_rfm_segments.parquet",
+  "features": [
+    "recency_days",
+    "frequency_orders",
+    "monetary_value_gbp"
+  ],
+  "preprocessing": {
+    "transformation": "log1p applied to recency_days, frequency_orders, and monetary_value_gbp",
+    "scaling": "StandardScaler fitted on the transformed customer features",
+    "pca_usage": "PCA is used only for the two-dimensional visualisation, not for fitting or selecting clusters."
+  },
+  "candidate_k": {
+    "minimum": 2,
+    "maximum": 10
+  },
+  "selection_method": {
+    "usability_gate": "Minimum cluster share >= 2%",
+    "stability_gate": "Mean pairwise ARI across five seeds >= 0.80",
+    "metric_benchmark_rule": "Among eligible candidates, the lowest equal-weight rank sum for higher silhouette, higher Calinski-Harabasz, lower Davies-Bouldin, and higher mean pairwise ARI identifies the mathematical benchmark.",
+    "operational_choice_rule": "K=4 is retained as the operational solution because it has the second-best composite rank sum, acceptable separation and stability, no tiny clusters, diminishing inertia gains after four clusters, and materially more targeting resolution than K=2.",
+    "inertia_note": "Inertia and its marginal reduction are reported as elbow evidence but excluded from the rank sum because inertia decreases mechanically as K increases; the curve begins to flatten after K=4.",
+    "tie_break": "Higher silhouette, then lower Davies-Bouldin, then the more parsimonious K.",
+    "business_override": true,
+    "claim_scope": "The operational choice is descriptive and targeting-oriented; it does not imply causal or predictive performance."
+  },
+  "random_state": 42,
+  "n_init": 20,
+  "stability_seeds": [
+    42,
+    7,
+    21,
+    84,
+    123
+  ],
+  "metric_optimal_k": 2,
+  "operational_chosen_k": 4,
+  "chosen_k": 4,
+  "metric_optimal_metrics": {
+    "inertia": 8577.117517,
+    "silhouette_score": 0.438266,
+    "calinski_harabasz_score": 6204.694464,
+    "davies_bouldin_score": 0.872464,
+    "minimum_cluster_count": 2348,
+    "minimum_cluster_share_pct": 39.9456,
+    "mean_pairwise_ari": 0.995507,
+    "minimum_pairwise_ari": 0.991835,
+    "selection_rank_sum": 6.0
+  },
+  "operational_chosen_metrics": {
+    "inertia": 4895.413446,
+    "silhouette_score": 0.366353,
+    "calinski_harabasz_score": 5095.016731,
+    "davies_bouldin_score": 0.928933,
+    "minimum_cluster_count": 1204,
+    "minimum_cluster_share_pct": 20.4832,
+    "mean_pairwise_ari": 0.996733,
+    "minimum_pairwise_ari": 0.993502,
+    "selection_rank_sum": 9.0
+  },
+  "chosen_metrics": {
+    "inertia": 4895.413446,
+    "silhouette_score": 0.366353,
+    "calinski_harabasz_score": 5095.016731,
+    "davies_bouldin_score": 0.928933,
+    "minimum_cluster_count": 1204,
+    "minimum_cluster_share_pct": 20.4832,
+    "mean_pairwise_ari": 0.996733,
+    "minimum_pairwise_ari": 0.993502,
+    "selection_rank_sum": 9.0
+  },
+  "cluster_sizes": {
+    "1": 1204,
+    "2": 1261,
+    "3": 1455,
+    "4": 1958
+  },
+  "cluster_profiles": [
+    {
+      "cluster_id": 1,
+      "cluster_label": "High-Value Champions",
+      "customers": 1204,
+      "customer_share_pct": 20.48,
+      "revenue_share_pct": 74.0,
+      "median_recency_days": 17.0,
+      "median_frequency_orders": 13.0,
+      "median_monetary_value_gbp": 4965.48,
+      "repeat_customer_rate_pct": 100.0,
+      "dominant_rfm_segment": "Champions",
+      "dominant_rfm_segment_share_pct": 88.37,
+      "recommended_action": "Protect current value with recognition, priority service, and relevant loyalty offers.",
+      "label_basis": "Median recency=17.0 days (rank 1/4); frequency=13.0 orders (rank 1/4); monetary value=GBP 4,965.48 (rank 1/4)."
+    },
+    {
+      "cluster_id": 2,
+      "cluster_label": "Recent Growth Customers",
+      "customers": 1261,
+      "customer_share_pct": 21.45,
+      "revenue_share_pct": 6.15,
+      "median_recency_days": 25.0,
+      "median_frequency_orders": 3.0,
+      "median_monetary_value_gbp": 729.25,
+      "repeat_customer_rate_pct": 81.05,
+      "dominant_rfm_segment": "Potential Loyalists",
+      "dominant_rfm_segment_share_pct": 44.49,
+      "recommended_action": "Nurture the next purchase with timely cross-sell and replenishment prompts.",
+      "label_basis": "Median recency=25.0 days (rank 2/4); frequency=3.0 orders (rank 3/4); monetary value=GBP 729.25 (rank 3/4)."
+    },
+    {
+      "cluster_id": 3,
+      "cluster_label": "Lapsed Established Customers",
+      "customers": 1455,
+      "customer_share_pct": 24.75,
+      "revenue_share_pct": 16.29,
+      "median_recency_days": 186.0,
+      "median_frequency_orders": 4.0,
+      "median_monetary_value_gbp": 1447.74,
+      "repeat_customer_rate_pct": 98.35,
+      "dominant_rfm_segment": "At Risk",
+      "dominant_rfm_segment_share_pct": 35.05,
+      "recommended_action": "Prioritise profile-based reactivation using known categories before broad discounting.",
+      "label_basis": "Median recency=186.0 days (rank 3/4); frequency=4.0 orders (rank 2/4); monetary value=GBP 1,447.74 (rank 2/4)."
+    },
+    {
+      "cluster_id": 4,
+      "cluster_label": "Dormant Low-Value Customers",
+      "customers": 1958,
+      "customer_share_pct": 33.31,
+      "revenue_share_pct": 3.56,
+      "median_recency_days": 404.5,
+      "median_frequency_orders": 1.0,
+      "median_monetary_value_gbp": 272.04,
+      "repeat_customer_rate_pct": 30.54,
+      "dominant_rfm_segment": "Hibernating",
+      "dominant_rfm_segment_share_pct": 65.47,
+      "recommended_action": "Use low-cost re-engagement tests and suppress outreach if inactivity persists.",
+      "label_basis": "Median recency=404.5 days (rank 4/4); frequency=1.0 orders (rank 4/4); monetary value=GBP 272.04 (rank 4/4)."
+    }
+  ],
+  "evaluated_candidates": 9,
+  "eligible_candidates": 9,
+  "quality_gates": {
+    "customer_count": {
+      "actual": 5878,
+      "expected": 5878,
+      "passed": true
+    },
+    "missing_clustering_features": {
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "one_assignment_per_customer": {
+      "assignment_rows": 5878,
+      "unique_customers": 5878,
+      "duplicate_customer_ids": 0,
+      "missing_assignments": 0,
+      "passed": true
+    },
+    "cluster_counts_reconcile": {
+      "profile_total": 5878,
+      "customer_total": 5878,
+      "clusters": 4,
+      "passed": true
+    },
+    "metric_optimal_benchmark": {
+      "actual": 2,
+      "expected": 2,
+      "visible_in_evaluation": true,
+      "passed": true
+    },
+    "exactly_four_final_clusters": {
+      "operational_chosen_k": 4,
+      "assigned_clusters": 4,
+      "profile_clusters": 4,
+      "passed": true
+    },
+    "random_state": {
+      "actual": 42,
+      "expected": 42,
+      "passed": true
+    },
+    "stability_metrics": {
+      "seeds": 5,
+      "chosen_mean_pairwise_ari": 0.996733,
+      "chosen_minimum_pairwise_ari": 0.993502,
+      "minimum_required_mean_ari": 0.8,
+      "passed": true
+    },
+    "minimum_cluster_share": {
+      "actual_pct": 20.4832,
+      "minimum_pct": 2.0,
+      "passed": true
+    },
+    "business_labels": {
+      "unique_labels": 4,
+      "missing_labels": 0,
+      "missing_actions": 0,
+      "passed": true
+    },
+    "monetary_value_reconciliation": {
+      "actual_gbp": 17374804.27,
+      "expected_gbp": 17374804.27,
+      "difference_gbp": -0.002,
+      "passed": true
+    },
+    "all_passed": true
+  },
+  "limitations": [
+    "K-Means imposes spherical partitions in transformed feature space and can simplify continuous customer behaviour.",
+    "Clusters are descriptive and do not establish causal response to marketing actions.",
+    "The fixed observation window and extreme wholesale-like customers influence RFM measures even after log transformation.",
+    "Cluster labels are descriptive summaries of original-unit medians and should be validated against future commercial outcomes before activation."
+  ]
+}

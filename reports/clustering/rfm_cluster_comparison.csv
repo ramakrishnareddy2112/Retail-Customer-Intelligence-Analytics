@@ -1,0 +1,33 @@
+rfm_segment,cluster_id,cluster_label,customer_count,share_of_rfm_segment_pct,share_of_cluster_pct
+Champions,1,High-Value Champions,1064,82.48062015503876,88.37209302325581
+Champions,2,Recent Growth Customers,136,10.542635658914728,10.785091197462332
+Champions,3,Lapsed Established Customers,90,6.976744186046512,6.185567010309279
+Champions,4,Dormant Low-Value Customers,0,0.0,0.0
+Loyal Customers,1,High-Value Champions,120,18.29268292682927,9.966777408637874
+Loyal Customers,2,Recent Growth Customers,146,22.25609756097561,11.578112609040444
+Loyal Customers,3,Lapsed Established Customers,390,59.451219512195124,26.804123711340207
+Loyal Customers,4,Dormant Low-Value Customers,0,0.0,0.0
+Potential Loyalists,1,High-Value Champions,6,1.0344827586206897,0.4983388704318937
+Potential Loyalists,2,Recent Growth Customers,561,96.72413793103448,44.488501189532116
+Potential Loyalists,3,Lapsed Established Customers,13,2.2413793103448274,0.8934707903780069
+Potential Loyalists,4,Dormant Low-Value Customers,0,0.0,0.0
+New Customers,1,High-Value Champions,0,0.0,0.0
+New Customers,2,Recent Growth Customers,202,85.95744680851064,16.019032513877875
+New Customers,3,Lapsed Established Customers,0,0.0,0.0
+New Customers,4,Dormant Low-Value Customers,33,14.042553191489361,1.6853932584269662
+Cannot Lose Them,1,High-Value Champions,14,6.278026905829597,1.1627906976744187
+Cannot Lose Them,2,Recent Growth Customers,0,0.0,0.0
+Cannot Lose Them,3,Lapsed Established Customers,209,93.72197309417041,14.36426116838488
+Cannot Lose Them,4,Dormant Low-Value Customers,0,0.0,0.0
+At Risk,1,High-Value Champions,0,0.0,0.0
+At Risk,2,Recent Growth Customers,0,0.0,0.0
+At Risk,3,Lapsed Established Customers,510,60.283687943262414,35.05154639175258
+At Risk,4,Dormant Low-Value Customers,336,39.716312056737586,17.160367722165475
+Hibernating,1,High-Value Champions,0,0.0,0.0
+Hibernating,2,Recent Growth Customers,0,0.0,0.0
+Hibernating,3,Lapsed Established Customers,0,0.0,0.0
+Hibernating,4,Dormant Low-Value Customers,1282,100.0,65.4749744637385
+Need Attention,1,High-Value Champions,0,0.0,0.0
+Need Attention,2,Recent Growth Customers,216,28.198433420365536,17.129262490087232
+Need Attention,3,Lapsed Established Customers,243,31.723237597911226,16.701030927835053
+Need Attention,4,Dormant Low-Value Customers,307,40.07832898172324,15.67926455566905

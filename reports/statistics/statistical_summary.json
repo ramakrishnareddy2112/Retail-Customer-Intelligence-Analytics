@@ -1,0 +1,132 @@
+{
+  "sources": {
+    "customers": "data/processed/customer_rfm_segments.parquet",
+    "orders": "reports/eda_tables/order_summary.csv"
+  },
+  "methodology": {
+    "alpha": 0.05,
+    "p_value_adjustment": "Holm correction within the 21-correlation family and within the 3 confirmatory group-test family.",
+    "correlations": "Two-sided Spearman rank correlations.",
+    "continuous_group_tests": "Two-sided Mann-Whitney U tests with rank-biserial effect sizes.",
+    "categorical_test": "Pearson chi-square test without continuity correction and Cramer's V effect size.",
+    "importance_note": "Statistical significance is reported as evidence, not as a substitute for effect magnitude or commercial importance."
+  },
+  "sample": {
+    "customers": 5878,
+    "orders": 40077,
+    "repeat_customers": 4255,
+    "one_time_customers": 1623,
+    "uk_customers": 5350,
+    "international_customers": 528,
+    "uk_orders": 36535,
+    "international_orders": 3542
+  },
+  "tests": {
+    "total": 24,
+    "correlations": 21,
+    "confirmatory_group_tests": 3,
+    "holm_adjusted_significant": 23
+  },
+  "strongest_correlations": [
+    {
+      "comparison": "monetary_value_gbp versus units_purchased",
+      "spearman_rho": 0.9406,
+      "adjusted_p_value": 0.0,
+      "effect_magnitude": "large"
+    },
+    {
+      "comparison": "frequency_orders versus active_span_days",
+      "spearman_rho": 0.8825,
+      "adjusted_p_value": 0.0,
+      "effect_magnitude": "large"
+    },
+    {
+      "comparison": "frequency_orders versus monetary_value_gbp",
+      "spearman_rho": 0.8583,
+      "adjusted_p_value": 0.0,
+      "effect_magnitude": "large"
+    },
+    {
+      "comparison": "frequency_orders versus units_purchased",
+      "spearman_rho": 0.8202,
+      "adjusted_p_value": 0.0,
+      "effect_magnitude": "large"
+    },
+    {
+      "comparison": "monetary_value_gbp versus distinct_products",
+      "spearman_rho": 0.7679,
+      "adjusted_p_value": 0.0,
+      "effect_magnitude": "large"
+    }
+  ],
+  "confirmatory_results": [
+    {
+      "test_id": "mann_whitney__repeat_vs_one_time_customer_value",
+      "statistic": 6350192.0,
+      "raw_p_value": 0.0,
+      "adjusted_p_value": 0.0,
+      "effect_size_name": "Rank-biserial correlation",
+      "effect_size": 0.8391,
+      "effect_magnitude": "large",
+      "reject_null": true,
+      "business_interpretation": "Repeat customers have a median value of GBP 1,370.48 versus GBP 228.96 for one-time customers; the distributional difference has a large effect (rank-biserial r=0.839). The effect size, not significance alone, indicates how meaningful this separation may be for retention investment.",
+      "limitations": "Customer value accumulates over unequal observed lifetimes, repeat status is defined from the same order history, and the test does not isolate causal lift."
+    },
+    {
+      "test_id": "mann_whitney__uk_vs_international_order_value",
+      "statistic": 46075248.5,
+      "raw_p_value": 1.2639394680315833e-176,
+      "adjusted_p_value": 2.5278789360631665e-176,
+      "effect_size_name": "Rank-biserial correlation",
+      "effect_size": -0.2879,
+      "effect_magnitude": "small",
+      "reject_null": true,
+      "business_interpretation": "Median UK order value is GBP 296.10 versus GBP 450.50 internationally; the difference has a small effect (rank-biserial r=-0.288). Commercial relevance should be assessed alongside fulfilment cost, market mix, and order volume.",
+      "limitations": "Orders from the same customer are not fully independent, country mix is uneven, and the data omit shipping cost, margin, exchange-rate effects, and promotions."
+    },
+    {
+      "test_id": "chi_square__geography_vs_repeat_status",
+      "statistic": 0.10738305528558413,
+      "raw_p_value": 0.7431433892806485,
+      "adjusted_p_value": 0.7431433892806485,
+      "effect_size_name": "Cramer's V",
+      "effect_size": 0.0043,
+      "effect_magnitude": "negligible",
+      "reject_null": false,
+      "business_interpretation": "Repeat rates are 72.4% for UK customers and 71.8% for international customers. Geography has a negligible association with repeat status (Cramer's V=0.004); this should not be treated as a strong segmentation signal solely because of its p-value.",
+      "limitations": "Primary country compresses multi-country histories, geography may proxy for shipping access or acquisition mix, and the analysis is observational."
+    }
+  ],
+  "correlation_matrix_minimum": -0.5705,
+  "correlation_matrix_maximum": 1.0,
+  "quality_gates": {
+    "customer_count": {
+      "actual": 5878,
+      "expected": 5878,
+      "passed": true
+    },
+    "missing_analysis_values": {
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "unique_orders": {
+      "actual": 40077,
+      "rows": 40077,
+      "passed": true
+    },
+    "monetary_value_reconciliation": {
+      "actual_gbp": 17374804.27,
+      "expected_gbp": 17374804.27,
+      "difference_gbp": -0.002,
+      "passed": true
+    },
+    "all_passed": true
+  },
+  "general_limitations": [
+    "The analysis is observational and cannot identify causal effects.",
+    "The fixed 2009-2011 observation window creates unequal customer exposure time.",
+    "The source lacks margin, demographics, acquisition channel, promotion, and shipping-cost fields.",
+    "Large samples can make commercially negligible effects statistically significant."
+  ]
+}
