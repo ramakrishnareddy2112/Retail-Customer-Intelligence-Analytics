@@ -20,7 +20,7 @@ through validated analytical phases.
 | RFM customer segmentation and cohort retention | Complete |
 | Statistical analysis with Holm-adjusted hypothesis tests | Complete |
 | K-Means customer clustering with multi-seed stability evaluation | Complete |
-| Automated tests | Passing: 20 tests |
+| Automated tests | Passing: 22 tests |
 
 December 2011 is a partial month. The source data ends on 2011-12-09, so December
 2011 is labelled as partial and should not be compared with complete months as a
@@ -85,6 +85,24 @@ causal or predictive performance.
 | 3 | Lapsed Established Customers | 1,455 | 24.75% | 16.29% | 186 days / 4 orders / GBP 1,447.74 | Prioritise profile-based reactivation using known categories. |
 | 4 | Dormant Low-Value Customers | 1,958 | 33.31% | 3.56% | 404.5 days / 1 order / GBP 272.04 | Use low-cost re-engagement tests and suppress outreach if inactivity persists. |
 
+## Notebooks
+
+Five compact, executed notebooks provide stakeholder-readable walkthroughs of the
+validated pipeline. They read reusable source contracts and generated reports;
+they do not duplicate production analytics or reopen the raw workbook.
+
+1. `notebooks/01_data_validation_and_cleaning.ipynb`
+2. `notebooks/02_sql_and_exploratory_analysis.ipynb`
+3. `notebooks/03_rfm_and_cohort_analysis.ipynb`
+4. `notebooks/04_statistical_analysis.ipynb`
+5. `notebooks/05_kmeans_customer_clustering.ipynb`
+
+Rebuild and execute all five with the project Python 3.12 environment:
+
+```bash
+.venv\Scripts\python.exe scripts/build_notebooks.py --execute
+```
+
 ## Dataset Attribution
 
 This project uses **Online Retail II** from the UCI Machine Learning Repository.
@@ -130,7 +148,7 @@ Run tests:
 Expected result for the current repository state:
 
 ```text
-20 passed
+22 passed
 ```
 
 ## Key Outputs
