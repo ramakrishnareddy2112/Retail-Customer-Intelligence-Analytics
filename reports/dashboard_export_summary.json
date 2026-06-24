@@ -1,0 +1,292 @@
+{
+  "sources": {
+    "completed_sales": "data/processed/completed_sales.parquet",
+    "returns": "data/processed/returns.parquet",
+    "orders": "reports/eda_tables/order_summary.csv",
+    "rfm": "data/processed/customer_rfm_segments.parquet",
+    "clusters": "data/processed/customer_clusters.parquet",
+    "cohorts": "reports/customer_analytics/cohort_counts.csv and cohort_retention.csv",
+    "validated_kpis": "reports/eda_summary.json"
+  },
+  "scope": {
+    "customer_value_definition": "Historical completed-sales monetary value in GBP; not predictive CLV.",
+    "outlier_treatment": "Validated outliers remain included in all export totals; no rows are deleted by this phase.",
+    "partial_period": "2011-12",
+    "partial_period_note": "December 2011 contains data only through 9 December and must not be compared as a complete month."
+  },
+  "exports": {
+    "dim_date": {
+      "filename": "dim_date.csv",
+      "rows": 739,
+      "columns": [
+        "date",
+        "year",
+        "quarter",
+        "month_number",
+        "month_name",
+        "year_month",
+        "month_start",
+        "is_partial_period"
+      ],
+      "size_bytes": 39561,
+      "size_mb": 0.0377
+    },
+    "fact_orders": {
+      "filename": "fact_orders.csv",
+      "rows": 40077,
+      "columns": [
+        "order_id",
+        "order_date",
+        "month_start",
+        "customer_id",
+        "country",
+        "order_revenue_gbp",
+        "units_sold",
+        "distinct_products",
+        "line_count",
+        "is_identified_customer"
+      ],
+      "size_bytes": 2860439,
+      "size_mb": 2.7279
+    },
+    "dim_customer": {
+      "filename": "dim_customer.csv",
+      "rows": 5878,
+      "columns": [
+        "customer_id",
+        "first_purchase_date",
+        "last_purchase_date",
+        "recency_days",
+        "frequency_orders",
+        "monetary_value_gbp",
+        "average_order_value_gbp",
+        "units_purchased",
+        "distinct_products",
+        "is_repeat_customer",
+        "r_score",
+        "f_score",
+        "m_score",
+        "rfm_score",
+        "rfm_segment",
+        "cluster_id",
+        "cluster_label"
+      ],
+      "size_bytes": 686242,
+      "size_mb": 0.6545
+    },
+    "fact_product_month": {
+      "filename": "fact_product_month.csv",
+      "rows": 67059,
+      "columns": [
+        "month_start",
+        "stock_code",
+        "description",
+        "revenue_gbp",
+        "units_sold",
+        "orders",
+        "identified_customers"
+      ],
+      "size_bytes": 4230501,
+      "size_mb": 4.0345
+    },
+    "fact_country_month": {
+      "filename": "fact_country_month.csv",
+      "rows": 573,
+      "columns": [
+        "month_start",
+        "country",
+        "revenue_gbp",
+        "orders",
+        "units_sold",
+        "identified_customers"
+      ],
+      "size_bytes": 22300,
+      "size_mb": 0.0213
+    },
+    "fact_returns_month": {
+      "filename": "fact_returns_month.csv",
+      "rows": 25,
+      "columns": [
+        "month_start",
+        "signed_return_value_gbp",
+        "absolute_return_value_gbp",
+        "return_lines",
+        "returned_units"
+      ],
+      "size_bytes": 1178,
+      "size_mb": 0.0011
+    },
+    "cohort_retention": {
+      "filename": "cohort_retention.csv",
+      "rows": 325,
+      "columns": [
+        "acquisition_month",
+        "purchase_month",
+        "cohort_month_index",
+        "cohort_size",
+        "active_customers",
+        "retention_pct",
+        "is_partial_period"
+      ],
+      "size_bytes": 14458,
+      "size_mb": 0.0138
+    },
+    "segment_summary": {
+      "filename": "segment_summary.csv",
+      "rows": 8,
+      "columns": [
+        "rfm_segment",
+        "customer_count",
+        "customer_share_pct",
+        "historical_customer_value_gbp",
+        "historical_value_share_pct",
+        "median_recency_days",
+        "median_frequency_orders",
+        "median_monetary_value_gbp",
+        "repeat_customer_rate_pct",
+        "priority",
+        "segment_rule",
+        "recommended_action"
+      ],
+      "size_bytes": 2078,
+      "size_mb": 0.002
+    },
+    "cluster_summary": {
+      "filename": "cluster_summary.csv",
+      "rows": 4,
+      "columns": [
+        "cluster_id",
+        "cluster_label",
+        "customer_count",
+        "customer_share_pct",
+        "historical_customer_value_gbp",
+        "historical_value_share_pct",
+        "median_recency_days",
+        "median_frequency_orders",
+        "median_monetary_value_gbp",
+        "repeat_customer_rate_pct",
+        "dominant_rfm_segment",
+        "dominant_rfm_segment_share_pct",
+        "label_basis",
+        "recommended_action"
+      ],
+      "size_bytes": 1650,
+      "size_mb": 0.0016
+    },
+    "kpi_snapshot": {
+      "filename": "kpi_snapshot.csv",
+      "rows": 1,
+      "columns": [
+        "data_through_date",
+        "completed_revenue_gbp",
+        "completed_orders",
+        "completed_units",
+        "average_order_value_gbp",
+        "median_order_value_gbp",
+        "identified_customers",
+        "repeat_customers",
+        "repeat_customer_rate_pct",
+        "identified_customer_revenue_gbp",
+        "anonymous_revenue_gbp",
+        "anonymous_revenue_share_pct",
+        "signed_returns_value_gbp",
+        "partial_period",
+        "partial_period_note"
+      ],
+      "size_bytes": 542,
+      "size_mb": 0.0005
+    }
+  },
+  "quality_gates": {
+    "completed_revenue": {
+      "actual_gbp": 20476260.45,
+      "expected_gbp": 20476260.45,
+      "difference_gbp": -0.002,
+      "passed": true
+    },
+    "completed_orders": {
+      "actual": 40077,
+      "expected": 40077,
+      "passed": true
+    },
+    "completed_units": {
+      "actual": 11205148,
+      "expected": 11205148,
+      "passed": true
+    },
+    "identified_customers": {
+      "actual": 5878,
+      "expected": 5878,
+      "passed": true
+    },
+    "repeat_customers": {
+      "actual": 4255,
+      "expected": 4255,
+      "passed": true
+    },
+    "identified_customer_revenue": {
+      "actual_gbp": 17374804.27,
+      "expected_gbp": 17374804.27,
+      "difference_gbp": -0.002,
+      "passed": true
+    },
+    "signed_returns_value": {
+      "actual_gbp": -1462050.61,
+      "expected_gbp": -1462050.61,
+      "difference_gbp": 0.0,
+      "passed": true
+    },
+    "segment_totals": {
+      "actual": 5878,
+      "expected": 5878,
+      "passed": true
+    },
+    "cluster_totals": {
+      "actual": 5878,
+      "expected": 5878,
+      "passed": true
+    },
+    "duplicate_order_ids": {
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "duplicate_customer_ids": {
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "customer_labels_complete": {
+      "missing_rfm_segments": 0,
+      "missing_cluster_labels": 0,
+      "passed": true
+    },
+    "december_2011_partial_period": {
+      "date_rows_flagged": 9,
+      "cohort_rows_flagged": 25,
+      "passed": true
+    },
+    "aggregate_fact_reconciliation": {
+      "product_revenue_difference_gbp": 0.0,
+      "country_revenue_difference_gbp": 0.0,
+      "product_units_difference": 0,
+      "country_units_difference": 0,
+      "passed": true
+    },
+    "cohort_retention_bounds": {
+      "minimum_pct": 2.63,
+      "maximum_pct": 100.0,
+      "passed": true
+    },
+    "all_passed": true,
+    "csv_file_sizes": {
+      "limit_bytes_per_file": 104857600,
+      "largest_file_bytes": 4230501,
+      "largest_file": "fact_product_month",
+      "files_over_limit": [],
+      "passed": true
+    }
+  },
+  "total_export_size_bytes": 7858949,
+  "total_export_size_mb": 7.4949
+}

@@ -1,0 +1,90 @@
+{
+  "name": "Retail Customer Intelligence",
+  "dataColors": [
+    "#1F4E78",
+    "#2A9D8F",
+    "#4C956C",
+    "#E9A23B",
+    "#C94C4C",
+    "#6B7C93",
+    "#76B7B2",
+    "#A7C957"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#1F2937",
+  "tableAccent": "#2A9D8F",
+  "good": "#4C956C",
+  "neutral": "#E9A23B",
+  "bad": "#C94C4C",
+  "maximum": "#1F4E78",
+  "center": "#F3F4F6",
+  "minimum": "#D7E3F0",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 28,
+      "color": "#16324F"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 14,
+      "color": "#16324F"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#1F2937"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#374151"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "show": true,
+            "fontFamily": "Segoe UI Semibold",
+            "fontSize": 12,
+            "fontColor": {
+              "solid": {
+                "color": "#16324F"
+              }
+            },
+            "background": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "alignment": "left"
+          }
+        ],
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#D1D5DB"
+              }
+            },
+            "radius": 2
+          }
+        ]
+      }
+    }
+  }
+}

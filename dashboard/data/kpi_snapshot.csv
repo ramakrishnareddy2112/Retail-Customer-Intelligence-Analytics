@@ -1,0 +1,2 @@
+data_through_date,completed_revenue_gbp,completed_orders,completed_units,average_order_value_gbp,median_order_value_gbp,identified_customers,repeat_customers,repeat_customer_rate_pct,identified_customer_revenue_gbp,anonymous_revenue_gbp,anonymous_revenue_share_pct,signed_returns_value_gbp,partial_period,partial_period_note
+2011-12-09,20476260.45,40077,11205148,510.92,302.22,5878,4255,72.39,17374804.27,3101456.18,15.15,-1462050.61,2011-12,December 2011 contains data only through 9 December and must not be compared as a complete month.

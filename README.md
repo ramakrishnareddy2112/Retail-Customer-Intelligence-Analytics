@@ -20,7 +20,7 @@ through validated analytical phases.
 | RFM customer segmentation and cohort retention | Complete |
 | Statistical analysis with Holm-adjusted hypothesis tests | Complete |
 | K-Means customer clustering with multi-seed stability evaluation | Complete |
-| Automated tests | Passing: 22 tests |
+| Automated tests | Passing: 24 tests |
 
 December 2011 is a partial month. The source data ends on 2011-12-09, so December
 2011 is labelled as partial and should not be compared with complete months as a
@@ -103,6 +103,29 @@ Rebuild and execute all five with the project Python 3.12 environment:
 .venv\Scripts\python.exe scripts/build_notebooks.py --execute
 ```
 
+## Power BI Dashboard Exports
+
+The dashboard phase exports a governed 10-table UTF-8 CSV package from existing
+validated Parquet and analytical reports. It does not rerun raw ingestion or
+cleaning and does not create a PBIX file.
+
+```bash
+python scripts/build_dashboard_exports.py
+```
+
+The package is written to `dashboard/data/` and reconciles to the confirmed sales,
+returns, customer, RFM-segment, and K=4 cluster totals. Supporting materials:
+
+- Build instructions: `dashboard/POWER_BI_BUILD_GUIDE.md`
+- Copy-ready measures: `dashboard/POWER_BI_MEASURES.md`
+- Export data dictionary: `dashboard/DATA_DICTIONARY.md`
+- Restrained accessible theme: `dashboard/retail_intelligence_theme.json`
+- Machine-readable validation: `reports/dashboard_export_summary.json`
+
+December 2011 remains visibly marked as partial, historical customer value is not
+presented as predictive CLV, anonymous sales remain in aggregate KPIs, and flagged
+outlier activity remains included.
+
 ## Dataset Attribution
 
 This project uses **Online Retail II** from the UCI Machine Learning Repository.
@@ -148,7 +171,7 @@ Run tests:
 Expected result for the current repository state:
 
 ```text
-22 passed
+24 passed
 ```
 
 ## Key Outputs
@@ -168,6 +191,9 @@ Expected result for the current repository state:
 - Customer cluster table: `data/processed/customer_clusters.parquet` and `.csv`
 - Clustering evaluation, profiles, and summary: `reports/clustering/`
 - Clustering charts: `images/clustering/`
+- Power BI-ready CSV package: `dashboard/data/`
+- Power BI build guide, measures, dictionary, and theme: `dashboard/`
+- Dashboard export reconciliation: `reports/dashboard_export_summary.json`
 
 Large raw, interim, and processed data files are intentionally excluded from Git.
 
