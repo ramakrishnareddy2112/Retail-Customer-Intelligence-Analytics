@@ -175,10 +175,10 @@ Create and activate a Python environment, then install dependencies:
 
 ```bash
 python -m venv .venv
-.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
 ```
 
-On macOS/Linux, use `.venv/bin/python` instead of `.venv\Scripts\python.exe`.
+On macOS/Linux, run `.venv/bin/python -m pip install -r requirements-dev.txt`.
 
 Run the pipeline stages in order:
 
