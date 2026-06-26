@@ -20,6 +20,7 @@ through validated analytical phases.
 | RFM customer segmentation and cohort retention | Complete |
 | Statistical analysis with Holm-adjusted hypothesis tests | Complete |
 | K-Means customer clustering with multi-seed stability evaluation | Complete |
+| Power BI dashboard with PBIX, PDF, and screenshots | Complete |
 | Automated tests | Passing: 24 tests |
 
 December 2011 is a partial month. The source data ends on 2011-12-09, so December
@@ -103,28 +104,48 @@ Rebuild and execute all five with the project Python 3.12 environment:
 .venv\Scripts\python.exe scripts/build_notebooks.py --execute
 ```
 
-## Power BI Dashboard Exports
 
-The dashboard phase exports a governed 10-table UTF-8 CSV package from existing
-validated Parquet and analytical reports. It does not rerun raw ingestion or
-cleaning and does not create a PBIX file.
+## Power BI Dashboard
+
+The project includes a two-page Power BI dashboard built from the governed dashboard export package. The dashboard provides an executive business overview and customer intelligence views for segment-level and cluster-level decision making.
+
+### Executive Overview
+
+The Executive Overview page summarizes total revenue, orders, customers, units sold, average order value, revenue per customer, monthly revenue trends, revenue by customer segment, top countries, top products, and monthly returns.
+
+![Executive Overview](reports/dashboard_executive_overview.png)
+
+### Customer Insights
+
+The Customer Insights page provides interactive slicers for year, country, and customer segment, along with customer segment and cluster summary tables containing customer counts, value contribution, priority, and recommended actions.
+
+![Customer Insights](reports/dashboard_customer_insights.png)
+
+### Dashboard Files
+
+* [Power BI Dashboard PBIX](reports/Retail_Customer_Intelligence_Dashboard.pbix)
+* [Dashboard PDF Export](reports/Retail_Customer_Intelligence_Dashboard.pdf)
+* [Executive Overview Screenshot](reports/dashboard_executive_overview.png)
+* [Customer Insights Screenshot](reports/dashboard_customer_insights.png)
+
+### Dashboard Build Assets
+
+The Power BI dashboard uses a governed 10-table UTF-8 CSV export package generated from validated Parquet data and analytical reports. The dashboard export process does not rerun raw ingestion or cleaning.
 
 ```bash
 python scripts/build_dashboard_exports.py
 ```
 
-The package is written to `dashboard/data/` and reconciles to the confirmed sales,
-returns, customer, RFM-segment, and K=4 cluster totals. Supporting materials:
+Supporting materials:
 
-- Build instructions: `dashboard/POWER_BI_BUILD_GUIDE.md`
-- Copy-ready measures: `dashboard/POWER_BI_MEASURES.md`
-- Export data dictionary: `dashboard/DATA_DICTIONARY.md`
-- Restrained accessible theme: `dashboard/retail_intelligence_theme.json`
-- Machine-readable validation: `reports/dashboard_export_summary.json`
+* Build instructions: `dashboard/POWER_BI_BUILD_GUIDE.md`
+* Copy-ready measures: `dashboard/POWER_BI_MEASURES.md`
+* Export data dictionary: `dashboard/DATA_DICTIONARY.md`
+* Accessible Power BI theme: `dashboard/retail_intelligence_theme.json`
+* Machine-readable validation: `reports/dashboard_export_summary.json`
 
-December 2011 remains visibly marked as partial, historical customer value is not
-presented as predictive CLV, anonymous sales remain in aggregate KPIs, and flagged
-outlier activity remains included.
+December 2011 remains visibly marked as partial, historical customer value is not presented as predictive CLV, anonymous sales remain included in aggregate KPIs, and flagged outlier activity remains included for transparent business reporting.
+
 
 ## Dataset Attribution
 
@@ -194,6 +215,10 @@ Expected result for the current repository state:
 - Power BI-ready CSV package: `dashboard/data/`
 - Power BI build guide, measures, dictionary, and theme: `dashboard/`
 - Dashboard export reconciliation: `reports/dashboard_export_summary.json`
+- Power BI dashboard file: `reports/Retail_Customer_Intelligence_Dashboard.pbix`
+- Power BI dashboard PDF: `reports/Retail_Customer_Intelligence_Dashboard.pdf`
+- Dashboard screenshots: `reports/dashboard_executive_overview.png`, `reports/dashboard_customer_insights.png`
+
 
 Large raw, interim, and processed data files are intentionally excluded from Git.
 
