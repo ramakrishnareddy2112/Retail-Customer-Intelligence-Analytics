@@ -169,14 +169,12 @@ ownership. Reproduce it with `python scripts/download_data.py`.
 
 Create and activate a Python environment, then install dependencies:
 
-
-Replace it with this:
-
-````md
 ```bash
 python -m venv .venv
 .venv\Scripts\python.exe -m pip install -r requirements.txt
+```
 
+On macOS/Linux, use `.venv/bin/python` instead of `.venv\Scripts\python.exe`.
 
 Run the pipeline stages in order:
 
@@ -196,8 +194,9 @@ Run tests:
 
 ```bash
 .venv\Scripts\python.exe -m pytest -q
-On macOS/Linux, run `.venv/bin/python -m pytest -q`.
 ```
+
+On macOS/Linux, run `.venv/bin/python -m pytest -q`.
 
 Expected result for the current repository state:
 
