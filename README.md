@@ -112,7 +112,7 @@ Rebuild and execute all five with the project Python 3.12 environment:
 
 ## Power BI Dashboard
 
-The project includes a two-page Power BI dashboard built from the governed dashboard export package. The dashboard provides an executive business overview and customer intelligence views for segment-level and cluster-level decision making.
+The project includes a multi-page Power BI dashboard build guide, with the portfolio app highlighting two main dashboard screenshots: Executive Overview and Customer Insights.The dashboard provides an executive business overview and customer intelligence views for segment-level and cluster-level decision making.
 
 ### Executive Overview
 
@@ -172,6 +172,7 @@ Create and activate a Python environment, then install dependencies:
 ```bash
 python -m venv .venv
 .venv\Scripts\python.exe -m pip install -r requirements.txt
+On macOS/Linux, use `.venv/bin/python` instead of `.venv\Scripts\python.exe`.
 ```
 
 Run the pipeline stages in order:
@@ -192,6 +193,7 @@ Run tests:
 
 ```bash
 .venv\Scripts\python.exe -m pytest -q
+On macOS/Linux, run `.venv/bin/python -m pytest -q`.
 ```
 
 Expected result for the current repository state:
@@ -250,7 +252,6 @@ dashboard/     Power BI file, dashboard guide, and screenshots
 docs/          Project charter, roadmap, and data documentation
 images/        Exported analytical charts
 notebooks/     Numbered analysis notebooks
-presentation/  Final presentation and speaking notes
 reports/       Reproducible summaries, tables, and findings
 scripts/       Command-line pipeline stages
 sql/           Schema, quality checks, and business queries
