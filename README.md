@@ -107,7 +107,8 @@ Rebuild and execute all five with the project Python 3.12 environment:
 
 ```bash
 .venv\Scripts\python.exe scripts/build_notebooks.py --execute
-```
+```md
+On macOS/Linux, run `.venv/bin/python scripts/build_notebooks.py --execute`.
 
 
 ## Power BI Dashboard

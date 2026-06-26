@@ -1,5 +1,5 @@
 {
-  "database_path": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\data\\processed\\retail_analytics.sqlite",
+  "database_path": "data/processed/retail_analytics.sqlite",
   "database_size_mb": 116.18,
   "table_counts": {
     "dim_date": 604,
@@ -13,5 +13,5 @@
   "completed_sales_value_gbp": 20476260.45,
   "returns_value_gbp": -1462050.61,
   "foreign_key_failures": 0,
-  "quality_check_sql": "C:\\Projects\\Retail-Customer-Intelligence-Analytics\\sql\\02_quality_checks.sql"
+  "quality_check_sql": "sql/02_quality_checks.sql"
 }
