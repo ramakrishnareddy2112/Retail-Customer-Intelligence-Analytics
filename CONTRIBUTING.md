@@ -4,7 +4,7 @@
 
 1. Clone the repository.
 2. Create and activate a Python 3.12 virtual environment.
-3. Install dependencies with `pip install -r requirements.txt`.
+3. Install dependencies with `pip install -r requirements-dev.txt`.
 4. Download the raw data with `python scripts/download_data.py`.
 5. Run the pipeline stages in the order listed in the README.
 6. Run tests with `python -m pytest -q`.
