@@ -112,7 +112,7 @@ Rebuild and execute all five with the project Python 3.12 environment:
 
 ## Power BI Dashboard
 
-The project includes a multi-page Power BI dashboard build guide, with the portfolio app highlighting two main dashboard screenshots: Executive Overview and Customer Insights.The dashboard provides an executive business overview and customer intelligence views for segment-level and cluster-level decision making.
+The project includes a multi-page Power BI dashboard build guide, with the portfolio app highlighting two main dashboard screenshots: Executive Overview and Customer Insights. The dashboard provides an executive business overview and customer intelligence views for segment-level and cluster-level decision making.
 
 ### Executive Overview
 
@@ -169,11 +169,14 @@ ownership. Reproduce it with `python scripts/download_data.py`.
 
 Create and activate a Python environment, then install dependencies:
 
+
+Replace it with this:
+
+````md
 ```bash
 python -m venv .venv
 .venv\Scripts\python.exe -m pip install -r requirements.txt
-On macOS/Linux, use `.venv/bin/python` instead of `.venv\Scripts\python.exe`.
-```
+
 
 Run the pipeline stages in order:
 

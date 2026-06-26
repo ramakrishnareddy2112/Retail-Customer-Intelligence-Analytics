@@ -94,7 +94,7 @@ st.markdown(
     """
 This app presents the final project output in a portfolio-friendly format.
 The full project includes a validated data pipeline, SQL analysis layer,
-customer segmentation, clustering, statistical testing, and a two-page Power BI dashboard.
+customer segmentation, clustering, statistical testing, and Power BI dashboard reporting.
 """
 )
 
