@@ -106,6 +106,7 @@ Rebuild and execute all five with the project Python 3.12 environment:
 
 
 ## Power BI Dashboard
+- [Live Streamlit App](https://retail-customer-intelligence-analytics.streamlit.app/)
 
 The project includes a two-page Power BI dashboard built from the governed dashboard export package. The dashboard provides an executive business overview and customer intelligence views for segment-level and cluster-level decision making.
 
@@ -218,7 +219,7 @@ Expected result for the current repository state:
 - Power BI dashboard file: `reports/Retail_Customer_Intelligence_Dashboard.pbix`
 - Power BI dashboard PDF: `reports/Retail_Customer_Intelligence_Dashboard.pdf`
 - Dashboard screenshots: `reports/dashboard_executive_overview.png`, `reports/dashboard_customer_insights.png`
-
+- [Live Streamlit App](https://retail-customer-intelligence-analytics.streamlit.app/)
 
 Large raw, interim, and processed data files are intentionally excluded from Git.
 
