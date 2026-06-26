@@ -5,9 +5,13 @@ validated sales metrics, a SQLite star schema, SQL business outputs, EDA charts,
 RFM customer segments, cohort retention matrices, non-parametric hypothesis tests,
 and stable evidence-selected customer clusters.
 
+## Live Demo
+
+[Live Streamlit App](https://retail-customer-intelligence-analytics.streamlit.app/)
+
 ## Project Status
 
-The reproducible analytics project is published on GitHub and continues to evolve
+The reproducible analytics project is complete, published on GitHub, and organized
 through validated analytical phases.
 
 | Area | Status |
@@ -21,6 +25,7 @@ through validated analytical phases.
 | Statistical analysis with Holm-adjusted hypothesis tests | Complete |
 | K-Means customer clustering with multi-seed stability evaluation | Complete |
 | Power BI dashboard with PBIX, PDF, and screenshots | Complete |
+| Streamlit portfolio app deployment | Complete |
 | Automated tests | Passing: 24 tests |
 
 December 2011 is a partial month. The source data ends on 2011-12-09, so December
@@ -106,7 +111,6 @@ Rebuild and execute all five with the project Python 3.12 environment:
 
 
 ## Power BI Dashboard
-- [Live Streamlit App](https://retail-customer-intelligence-analytics.streamlit.app/)
 
 The project includes a two-page Power BI dashboard built from the governed dashboard export package. The dashboard provides an executive business overview and customer intelligence views for segment-level and cluster-level decision making.
 
@@ -124,10 +128,10 @@ The Customer Insights page provides interactive slicers for year, country, and c
 
 ### Dashboard Files
 
-* [Power BI Dashboard PBIX](reports/Retail_Customer_Intelligence_Dashboard.pbix)
-* [Dashboard PDF Export](reports/Retail_Customer_Intelligence_Dashboard.pdf)
-* [Executive Overview Screenshot](reports/dashboard_executive_overview.png)
-* [Customer Insights Screenshot](reports/dashboard_customer_insights.png)
+- [Power BI Dashboard PBIX](reports/Retail_Customer_Intelligence_Dashboard.pbix)
+- [Dashboard PDF Export](reports/Retail_Customer_Intelligence_Dashboard.pdf)
+- [Executive Overview Screenshot](reports/dashboard_executive_overview.png)
+- [Customer Insights Screenshot](reports/dashboard_customer_insights.png)
 
 ### Dashboard Build Assets
 
@@ -219,7 +223,7 @@ Expected result for the current repository state:
 - Power BI dashboard file: `reports/Retail_Customer_Intelligence_Dashboard.pbix`
 - Power BI dashboard PDF: `reports/Retail_Customer_Intelligence_Dashboard.pdf`
 - Dashboard screenshots: `reports/dashboard_executive_overview.png`, `reports/dashboard_customer_insights.png`
-- [Live Streamlit App](https://retail-customer-intelligence-analytics.streamlit.app/)
+
 
 Large raw, interim, and processed data files are intentionally excluded from Git.
 
