@@ -1,5 +1,7 @@
 # Retail Customer Intelligence and Retention Analytics
 
+![CI](https://github.com/ramakrishnareddy2112/Retail-Customer-Intelligence-Analytics/actions/workflows/ci.yml/badge.svg)
+
 An end-to-end retail analytics project that turns Online Retail II transactions into
 validated sales metrics, a SQLite star schema, SQL business outputs, EDA charts,
 RFM customer segments, cohort retention matrices, non-parametric hypothesis tests,
