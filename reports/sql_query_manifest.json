@@ -1,5 +1,5 @@
 {
-  "database": "/data/processed/retail_analytics.sqlite",
+  "database": "data/processed/retail_analytics.sqlite",
   "queries": {
     "foreign_key_resolution": {
       "rows": 5,
@@ -7,7 +7,7 @@
         "check_name",
         "failure_count"
       ],
-      "output": "/reports/sql_results/foreign_key_resolution.csv"
+      "output": "reports/sql_results/foreign_key_resolution.csv"
     },
     "partition_reconciliation": {
       "rows": 1,
@@ -17,7 +17,7 @@
         "excluded_non_sales",
         "reconciled_unique_rows"
       ],
-      "output": "/reports/sql_results/partition_reconciliation.csv"
+      "output": "reports/sql_results/partition_reconciliation.csv"
     },
     "sales_value_reconciliation": {
       "rows": 1,
@@ -27,7 +27,7 @@
         "identified_customers",
         "anonymous_sales_lines"
       ],
-      "output": "/reports/sql_results/sales_value_reconciliation.csv"
+      "output": "reports/sql_results/sales_value_reconciliation.csv"
     },
     "returns_value_reconciliation": {
       "rows": 1,
@@ -35,7 +35,7 @@
         "signed_returns_value_gbp",
         "return_or_cancellation_invoices"
       ],
-      "output": "/reports/sql_results/returns_value_reconciliation.csv"
+      "output": "reports/sql_results/returns_value_reconciliation.csv"
     },
     "executive_kpis": {
       "rows": 1,
@@ -46,7 +46,7 @@
         "average_order_value_gbp",
         "revenue_per_identified_customer_gbp"
       ],
-      "output": "/reports/sql_results/executive_kpis.csv"
+      "output": "reports/sql_results/executive_kpis.csv"
     },
     "monthly_revenue_growth": {
       "rows": 25,
@@ -56,7 +56,7 @@
         "orders",
         "month_over_month_growth_pct"
       ],
-      "output": "/reports/sql_results/monthly_revenue_growth.csv"
+      "output": "reports/sql_results/monthly_revenue_growth.csv"
     },
     "country_performance": {
       "rows": 43,
@@ -67,7 +67,7 @@
         "identified_customers",
         "average_order_value_gbp"
       ],
-      "output": "/reports/sql_results/country_performance.csv"
+      "output": "reports/sql_results/country_performance.csv"
     },
     "top_products": {
       "rows": 20,
@@ -78,7 +78,7 @@
         "revenue_gbp",
         "order_count"
       ],
-      "output": "/reports/sql_results/top_products.csv"
+      "output": "reports/sql_results/top_products.csv"
     },
     "top_customers": {
       "rows": 20,
@@ -91,7 +91,7 @@
         "first_purchase",
         "last_purchase"
       ],
-      "output": "/reports/sql_results/top_customers.csv"
+      "output": "reports/sql_results/top_customers.csv"
     },
     "repeat_customer_rate": {
       "rows": 1,
@@ -100,7 +100,7 @@
         "repeat_customers",
         "repeat_customer_rate_pct"
       ],
-      "output": "/reports/sql_results/repeat_customer_rate.csv"
+      "output": "reports/sql_results/repeat_customer_rate.csv"
     },
     "product_returns": {
       "rows": 20,
@@ -111,7 +111,7 @@
         "returned_units",
         "absolute_return_value_gbp"
       ],
-      "output": "/reports/sql_results/product_returns.csv"
+      "output": "reports/sql_results/product_returns.csv"
     },
     "customer_revenue_deciles": {
       "rows": 10,
@@ -121,7 +121,7 @@
         "revenue_gbp",
         "revenue_share_pct"
       ],
-      "output": "/reports/sql_results/customer_revenue_deciles.csv"
+      "output": "reports/sql_results/customer_revenue_deciles.csv"
     },
     "outlier_profile": {
       "rows": 1,
@@ -131,7 +131,7 @@
         "revenue_outlier_lines",
         "flagged_revenue_gbp"
       ],
-      "output": "/reports/sql_results/outlier_profile.csv"
+      "output": "reports/sql_results/outlier_profile.csv"
     }
   }
 }
