@@ -13,11 +13,6 @@ This project was developed as an individual project during my **Data Science Int
 
 The main objective of this project is to analyze retail customer and sales data, identify meaningful business patterns, understand customer behavior, evaluate customer retention, and generate actionable insights that support data-driven decision-making in the retail domain.
 
-An end-to-end retail analytics project that turns Online Retail II transactions into
-validated sales metrics, a SQLite star schema, SQL business outputs, EDA charts,
-RFM customer segments, cohort retention matrices, non-parametric hypothesis tests,
-and stable evidence-selected customer clusters.
-
 ## Live Demo
 
 [Live Streamlit App](https://retail-customer-intelligence-analytics.streamlit.app/)
