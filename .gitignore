@@ -34,3 +34,8 @@ reports/generated/
 .DS_Store
 Thumbs.db
 .vscode/settings.json
+
+.venv/
+venv/
+__pycache__/
+*.pyc
