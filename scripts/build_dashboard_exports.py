@@ -1,5 +1,3 @@
-"""Build Power BI-ready CSV exports from validated project outputs."""
-
 from __future__ import annotations
 
 import json
